@@ -1,4 +1,4 @@
-// Dữ liệu mẫu với URL hình ảnh và mô tả
+
 const photoData = {
     "Bơ": {
         "images": ["bo.jpg", "bo.jpg", "bo.jpg"],
@@ -38,13 +38,10 @@ const photoData = {
     }
 };
 
-// Lưu dữ liệu vào Local Storage
 localStorage.setItem('photoData', JSON.stringify(photoData));
 
-// Lấy dữ liệu từ Local Storage
 const storedPhotoData = JSON.parse(localStorage.getItem('photoData'));
 
-// Tạo danh sách bên trái
 const photoList = document.getElementById('photo-list');
 for (const category in storedPhotoData) {
     const listItem = document.createElement('li');
@@ -78,7 +75,6 @@ for (const category in storedPhotoData) {
     photoList.appendChild(listItem);
 }
 
-// Hiển thị hình ảnh bên phải
 function displayPhotos(category) {
     const photoDisplay = document.getElementById('photo-display');
     photoDisplay.innerHTML = '';
